@@ -93,9 +93,8 @@ function setWeather(weather) {
         .catch(error => weatherError(error));
 
     if (weather.get()['conditionCode'] && weather.get()['temperatureC']) {
-        weatherIcon.href = "WeatherIcons/" + weather.get()['conditionCode'] + "small.png";
+        weatherIcon.href = "images/" + weather.get()['conditionCode'] + "small.png";
         weatherElement.text = Math.round(weather.get()['temperatureC']) + "C";
-        weatherElement.text = '9C';
     } else {
         weatherError(null);
     }

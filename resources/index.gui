@@ -4,17 +4,17 @@
   <!-- Top section -->
   <svg class="battery-container">
     <text id="battery-measure" class="colour-secondary" />
-    <image id="charge-img" class="colour-secondary" width="22" height="22" x="$+2" y="$-48" href="icons/stat_am_solid_24px.png"/>
+    <image id="charge-img" class="colour-secondary" width="22" height="22" x="$+2" y="$-48" href="images/stat_am_solid_24px.png"/>
   </svg>
   
   <svg class="steps-container">
     <text id="steps" class="colour-secondary" />
-    <image id="steps-img" class="colour-secondary" width="24" height="24" x="$+4" y="$-48" href="icons/stat_steps_solid_24px.png"/>
+    <image id="steps-img" class="colour-secondary" width="24" height="24" x="$+4" y="$-48" href="images/stat_steps_solid_24px.png"/>
   </svg>
   
   <svg class="heart-container">
     <text id="heart-rate" class="colour-secondary" />
-    <image id="heart-rate-img" class="colour-secondary" width="24" height="24" x="$+5" y="$-48" href="icons/stat_hr_solid_24px.png"/>
+    <image id="heart-rate-img" class="colour-secondary" width="24" height="24" x="$+5" y="$-48" href="images/stat_hr_solid_24px.png"/>
   </svg>
   
 
@@ -28,9 +28,9 @@
 <!--   <rect class="colour-secondary" width="220" height="2" x="40" y="63%"/> -->
   
   <text id="weather" class="colour-secondary"/>
-  <image id="weather-icon" class="colour-secondary" width="70" height="70" x="21%" y="64%-2" href=""/>
+  <image id="weather-icon" class="colour-secondary" width="70" height="70" x="22%" y="64%-2" href=""/>
   
    <!-- Bottom section -->
-  <image id="none" width="200" height="45" x="18%" y="86%" href="attribution/poweredby-oneline-small.png"/>
+  <image id="none" width="200" height="45" x="18%" y="86%" href="images/poweredby-oneline-small.png"/>
   
 </svg>
