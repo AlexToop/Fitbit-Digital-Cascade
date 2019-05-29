@@ -1,0 +1,9 @@
+# gitignore file for alextoop website nodejs project.
+
+# directories
+/.idea/
+/node_modules/
+/build/
+
+# file types
+*.iml
