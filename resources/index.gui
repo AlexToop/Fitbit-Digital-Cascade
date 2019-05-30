@@ -28,7 +28,7 @@
 <!--   <rect class="colour-secondary" width="220" height="2" x="40" y="63%"/> -->
   
   <text id="weather" class="colour-secondary"/>
-  <image id="weather-icon" class="colour-secondary" width="70" height="70" x="22%" y="64%-2" href=""/>
+  <image id="weather-icon" class="colour-secondary" width="65" height="65" x="27%" y="64%" href=""/>
   
    <!-- Bottom section -->
   <image id="none" width="200" height="45" x="18%" y="86%" href="images/poweredby-oneline-small.png"/>
