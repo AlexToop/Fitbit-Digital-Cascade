@@ -68,7 +68,7 @@
 
 
 #date {
-    font-size: 47;
+    font-size: 37;
     font-family: Colfax-Regular;
     text-length: 32;
     text-anchor: middle;
@@ -78,10 +78,10 @@
 }
 
 #weather {
-    font-size: 47;
+    font-size: 37;
     font-family: Colfax-Regular;
     text-length: 60;
     text-anchor: middle;
-    x: 61%;
-    y: 81%;
+    x: 59%;
+    y: 78%;
 }
