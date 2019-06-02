@@ -94,7 +94,7 @@ function setWeather(weather) {
 
     if (weather.get()['conditionCode'] && weather.get()['temperatureC']) {
         weatherIcon.href = "images/" + weather.get()['conditionCode'] + "small.png";
-        weatherElement.text = Math.round(weather.get()['temperatureC']) + "C";
+        weatherElement.text = Math.round(weather.get()['temperatureC']) + "°";
     } else {
         weatherError(null);
     }

@@ -104,7 +104,7 @@ var mapping_codes = (_mapping_codes = {}, _defineProperty(_mapping_codes, Provid
     // 751: ,
     // 761: ,
     // 762: ,
-    // 771: ,
+    771: Conditions.Wind,
     // 781: ,
 
     800: Conditions.ClearSky,
@@ -112,7 +112,10 @@ var mapping_codes = (_mapping_codes = {}, _defineProperty(_mapping_codes, Provid
     801: Conditions.FewClouds,
     802: Conditions.ScatteredClouds,
     803: Conditions.BrokenClouds,
-    804: Conditions.BrokenClouds
+    804: Conditions.BrokenClouds,
+
+    905: Conditions.Wind,
+    957: Conditions.Wind
 }), _defineProperty(_mapping_codes, Providers.darksky, {
     'clear-day': Conditions.ClearSky,
     'clear-night': Conditions.ClearSky,
@@ -123,7 +126,8 @@ var mapping_codes = (_mapping_codes = {}, _defineProperty(_mapping_codes, Provid
     'thunderstorm': Conditions.Thunderstorm,
     'snow': Conditions.Snow,
     'sleet': Conditions.Snow,
-    'fog': Conditions.Mist
+    'fog': Conditions.Mist,
+    'wind': Conditions.Wind
 }), _defineProperty(_mapping_codes, Providers.weatherbit, {
     "200": Conditions.Thunderstorm,
     "201": Conditions.Thunderstorm,

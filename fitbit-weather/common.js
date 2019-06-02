@@ -8,6 +8,7 @@ export var Conditions = {
     Thunderstorm: 6,
     Snow: 7,
     Mist: 8,
+    Wind: 9,
     Unknown: 999999999
 };
 

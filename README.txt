@@ -11,3 +11,4 @@ terminal
 Note: https://github.com/kickstandapps/WeatherIcons
 https://dev.fitbit.com/build/guides/design-guidelines/downloadable-assets/
 https://dev.fitbit.com/build/guides/user-interface/css/#fonts
+http://adamwhitcroft.com/climacons/
