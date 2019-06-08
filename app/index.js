@@ -87,8 +87,8 @@ function setDate(today) {
 
 
 function setWeather(weather) {
-    // return the cached value if it is less than 60 minutes old
-    weather.fetch(60 * 60 * 1000)
+    // return the cached value if it is less than 30 minutes old
+    weather.fetch(30 * 60 * 1000)
         .then(weather => console.log(JSON.stringify(weather)))
         .catch(error => weatherError(error));
 

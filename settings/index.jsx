@@ -11,7 +11,10 @@ function mySettings(props) {
                         {color: "#FFB003"},
                         {color: "#149E4E"},
                         {color: "#DF75E8"},
-                        {color: "#E7EAE9"}
+                        {color: "#E7EAE9"},
+                        {color: "#000000"},
+                        {color: "#2A363B"},
+                        {color: "#334764"}
                     ]}
                 />
             </Section>
@@ -26,7 +29,9 @@ function mySettings(props) {
                         {color: "#334764"},
                         {color: "#90230E"},
                         {color: "#68A9AF"},
-                        {color: "#035250"}
+                        {color: "#035250"},
+                        {color: "#7A6A53"},
+                        {color: "#F06B50"}
                     ]}
                 />
             </Section>

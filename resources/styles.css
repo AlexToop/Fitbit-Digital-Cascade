@@ -33,7 +33,7 @@
     text-length: 32;
     text-anchor: middle;
     x: 9%;
-    y: 8%;
+    y: 9%;
 }
 
 
@@ -43,7 +43,7 @@
     text-length: 60;
     text-anchor: middle;
     x: 46%;
-    y: 8%;
+    y: 9%;
 }
 
 
@@ -52,8 +52,8 @@
     font-family: Colfax-Medium;
     text-length: 60;
     text-anchor: middle;
-    x: 84%;
-    y: 8%;
+    x: 82%;
+    y: 9%;
 }
 
 
@@ -82,6 +82,6 @@
     font-family: Colfax-Regular;
     text-length: 60;
     text-anchor: middle;
-    x: 59%;
+    x: 57%;
     y: 77%;
 }
