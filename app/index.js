@@ -11,7 +11,7 @@ import {vibration} from "haptics";
 import * as messaging from "messaging";
 
 const main = document.getElementById("main");
-const date = document.getElementById("date");
+const guiDate = document.getElementById("date");
 const time = document.getElementById("time");
 const batteryMeasure = document.getElementById("battery-measure");
 const weatherElement = document.getElementById("weather");
@@ -22,7 +22,6 @@ const heartRate = document.getElementById("heart-rate");
 
 var sensors = [];
 setWeather(weather);
-// updateBattery(battery);
 clock.granularity = "minutes";
 
 clock.ontick = (evt) => {
@@ -38,21 +37,20 @@ clock.ontick = (evt) => {
     let mins = util.zeroPad(date.getMinutes());
     time.text = `${hours}:${mins}`;
 
-    setDate(date);
-    // setWeather(weather);
+    var day = util.getDay(date.getDay());
+    var dateNo = date.getDate();
+    guiDate.text = day + " " + dateNo;
     updateBattery(battery);
     updateActivity(today);
-}
+};
 
 
 if (HeartRateSensor) {
     const hrm = new HeartRateSensor({frequency: 1});
     heartRate.text = "NA";
-
     hrm.addEventListener("reading", () => {
         heartRate.text = hrm.heartRate + "";
     });
-
     sensors.push(hrm);
     hrm.start();
 }
@@ -71,38 +69,24 @@ display.addEventListener("change", () => {
 });
 
 
-function setDate(today) {
-    //
-    var weekday = new Array(7);
-    weekday[0] = "SUN";
-    weekday[1] = "MON";
-    weekday[2] = "TUE";
-    weekday[3] = "WED";
-    weekday[4] = "THU";
-    weekday[5] = "FRI";
-    weekday[6] = "SAT";
-
-    date.text = weekday[today.getDay()] + " " + today.getDate();
-}
+// Message is received
+messaging.peerSocket.onmessage = evt => {
+    if (evt.data.key === "textColour" && evt.data.newValue) {
+        let color = JSON.parse(evt.data.newValue);
+        time.style.fill = color;
+        guiDate.style.fill = color;
+    }
+    if (evt.data.key === "backgroundColour" && evt.data.newValue) {
+        let color = JSON.parse(evt.data.newValue);
+        background.style.fill = color;
+    }
+};
 
 
 function setWeather(weather) {
-    // return the cached value if it is less than 30 minutes old
-    weather.fetch(30 * 60 * 1000)
-        .then(weather => console.log(JSON.stringify(weather)))
-        .catch(error => weatherError(error));
-
-    if (weather.get()['conditionCode'] && weather.get()['temperatureC']) {
-        weatherIcon.href = "images/" + weather.get()['conditionCode'] + "small.png";
-        weatherElement.text = Math.round(weather.get()['temperatureC']) + "°";
-    } else {
-        weatherError(null);
-    }
-}
-
-
-function weatherError(error) {
-    console.log("Issue fetching the weather.");
+    weather = util.getWeatherUpdate(weather);
+    weatherElement.text = util.getWeatherTemperature(weather);
+    weatherIcon.href = "images/" + util.getWeatherConditionCode(weather) + "small.png";
 }
 
 
@@ -116,27 +100,13 @@ function updateActivity(today) {
 }
 
 
-// Message is received
-messaging.peerSocket.onmessage = evt => {
-    if (evt.data.key === "textColour" && evt.data.newValue) {
-        let color = JSON.parse(evt.data.newValue);
-        time.style.fill = color;
-        date.style.fill = color;
-    }
-    if (evt.data.key === "backgroundColour" && evt.data.newValue) {
-        let color = JSON.parse(evt.data.newValue);
-        background.style.fill = color;
-    }
-};
-
-
-// Message socket opens
-messaging.peerSocket.onopen = () => {
-    console.log("App Socket Open");
-};
-
-
-// Message socket closes
-messaging.peerSocket.onclose = () => {
-    console.log("App Socket Closed");
-};
+// // Message socket opens
+// messaging.peerSocket.onopen = () => {
+//     console.log("App Socket Open");
+// };
+//
+//
+// // Message socket closes
+// messaging.peerSocket.onclose = () => {
+//     console.log("App Socket Closed");
+// };
