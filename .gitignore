@@ -5,5 +5,8 @@
 /node_modules/
 /build/
 
+# files
+.DS_Store
+
 # file types
 *.iml

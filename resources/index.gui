@@ -31,6 +31,6 @@
   <text id="weather" class="colour-secondary"/>
   
    <!-- Bottom section -->
-  <image id="none" width="200" height="45" x="18%" y="86%" href="images/poweredby-oneline-small.png"/>
+  <image id="darkskyimage" class="colour-secondary" width="200" height="45" x="18%" y="86%" href="images/darksky-black-small-grey.png"/>
   
 </svg>

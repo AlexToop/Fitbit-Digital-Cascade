@@ -19,6 +19,10 @@ const weatherIcon = document.getElementById("weather-icon");
 const background = document.getElementById("background");
 const steps = document.getElementById("steps");
 const heartRate = document.getElementById("heart-rate");
+const darkskyImage = document.getElementById("darkskyimage");
+const stepsImage = document.getElementById("steps-img");
+const heartRateImage = document.getElementById("heart-rate-img");
+const batteryImage = document.getElementById("charge-img");
 
 var sensors = [];
 setWeather(weather);
@@ -80,13 +84,25 @@ messaging.peerSocket.onmessage = evt => {
         let color = JSON.parse(evt.data.newValue);
         background.style.fill = color;
     }
+    if (evt.data.key === "generalTextColour" && evt.data.newValue) {
+        let color = JSON.parse(evt.data.newValue);
+        darkskyImage.style.fill = color;
+        steps.style.fill = color;
+        heartRate.style.fill = color;
+        batteryMeasure.style.fill = color;
+        weatherElement.style.fill = color;
+        batteryImage.style.fill = color;
+        stepsImage.style.fill = color;
+        heartRateImage.style.fill = color;
+        weatherIcon.style.fill = color;
+    }
 };
 
 
 function setWeather(weather) {
     weather = util.getWeatherUpdate(weather);
     weatherElement.text = util.getWeatherTemperature(weather);
-    weatherIcon.href = "images/" + util.getWeatherConditionCode(weather) + "small.png";
+    weatherIcon.href = "images/weather-icon-" + util.getWeatherConditionCode(weather) + ".png";
 }
 
 
