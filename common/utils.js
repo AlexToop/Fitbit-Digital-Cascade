@@ -30,13 +30,13 @@ export function getWeatherUpdate(weather) {
 
 export function getWeatherTemperature(weather) {
     return (weather && weather.get()['temperatureC']) ?
-        Math.round(weather.get()['temperatureC']) + "°" :
-        "";
+        (Math.round(weather.get()['temperatureC']) + "°") :
+        "...°";
 }
 
 
 export function getWeatherConditionCode(weather) {
-    return (weather) ? weather.get()['conditionCode'] : "";
+    return (weather) ? weather.get()['conditionCode'] : 1;
 }
 
 
