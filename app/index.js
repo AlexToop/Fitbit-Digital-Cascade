@@ -19,7 +19,7 @@ const weatherIcon = document.getElementById("weather-icon");
 const background = document.getElementById("background");
 const steps = document.getElementById("steps");
 const heartRate = document.getElementById("heart-rate");
-const darkskyImage = document.getElementById("darkskyimage");
+const location = document.getElementById("location");
 const stepsImage = document.getElementById("steps-img");
 const heartRateImage = document.getElementById("heart-rate-img");
 const batteryImage = document.getElementById("charge-img");
@@ -45,6 +45,7 @@ clock.ontick = (evt) => {
     var dateNo = date.getDate();
     guiDate.text = day + " " + dateNo;
     updateBattery(battery);
+    setWeather(weather);
     updateActivity(today);
 };
 
@@ -86,7 +87,7 @@ messaging.peerSocket.onmessage = evt => {
     }
     if (evt.data.key === "generalTextColour" && evt.data.newValue) {
         let color = JSON.parse(evt.data.newValue);
-        darkskyImage.style.fill = color;
+        location.style.fill = color;
         steps.style.fill = color;
         heartRate.style.fill = color;
         batteryMeasure.style.fill = color;
@@ -103,6 +104,7 @@ function setWeather(weather) {
     weather = util.getWeatherUpdate(weather);
     weatherElement.text = util.getWeatherTemperature(weather);
     weatherIcon.href = "images/weather-icon-" + util.getWeatherConditionCode(weather) + ".png";
+    location.text = util.getWeatherLocation(weather);
 }
 
 
